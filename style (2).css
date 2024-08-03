@@ -1,0 +1,261 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+.banner
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.slider
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+#slideimg
+{
+    width: 100%;
+    height: 120%;
+    animation: zoom 3s linear infinite;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+    }
+    15%{
+        transform: scale(1);
+    }
+    85%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+
+.overlay
+{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+    position: absolute;
+    top: 0;
+}
+.content
+{
+    width: 80%;
+    height: 800px;
+    margin: -150px auto;
+    background: transparent;
+    font-family: "Copper Black";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+header
+{
+    color: hsl(233, 13%, 49%);
+    margin: 3.3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.toggle
+{
+    margin-top: 2rem;
+    color: hdl(234, 14%, 74%);
+    display: flex;
+    align-items: center;
+}
+.togglebtn
+{
+    margin: 0 1rem;
+}
+.checkbox
+{
+    display: none;
+}
+.sub
+{
+    background: linear-gradient(
+        135deg,
+        rgba(163, 168, 240, 1) 0%,
+        rgba(105, 111, 221, 1) 100%
+    );
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 1.6rem;
+    width: 3.3rem;
+    border-radius: 1.6rem;
+    padding: 0.3rem;
+}
+.circle
+{
+    background-color: #fff;
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+}
+.checkbox:checked + .sub
+{
+    justify-content: flex-end;
+}
+.cards
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card
+{
+    background-color: #fff;
+    color: hsl(233, 13%, 49%);
+    border-radius: 0.8rem;
+}
+.cards .card.active
+{
+    background: linear-gradient(
+        135deg,
+        rgb(69, 72, 124) 0%,
+        #111222 100%
+    );
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transform: scale(1.1);
+    z-index: 1;
+}
+ul
+{
+    margin: 2.6rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+ul li
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem 0.8rem;
+}
+ul li.pricebottombar
+{
+    font-size: 3rem;
+    color: hsl(232, 16%, 54%);
+    padding-bottom: rem;
+}
+.cardshadow
+{
+    box-shadow: -5px -5px 15px 1px rgba(0,0,0,0.1);
+}
+.btn
+{
+    margin-top: 1rem;
+    height: 2.6rem;
+    width: 9.3rem;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    background: linear-gradient(
+        135deg,
+        rgba(163, 168, 240, 1) 0%,
+        rgba(105, 111, 221, 1) 100%
+    );
+    color: #fff;
+    outline: none;
+    border: 0;
+    font-weight: bold;
+    transition: all 0.3 ease-in-out;
+}
+.navbar
+{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 5px;
+}
+.navbar .logo a
+{
+    font-size: 28px;
+    font-family: "Bauhaus 93";
+    color: black;
+    font-weight: 50;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.navbar .logo a span
+{
+    color: #fff;
+    font-family: "Bauhaus 93";
+}
+.navbar .menu .navitem
+{
+    display: inline-block;
+    position: relative;
+    margin-left: -7px;
+}
+.navbar .menu .navitem .navlink
+{
+    color: #fff;
+    font-size: 16px;
+    font-family: "Cooper Black";
+    font-weight: 600;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px 0;
+}
+.navbar .navitem .navlink span
+{
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    border-radius: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out 0s;
+}
+.navbar .navitem .navlink span::before
+{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: rgb(119, 70, 25);
+    left: 110%;
+}
+.navbar .navitem .navlink span::after
+{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    left: 140%;
+}
+.navbar .navitem > .navlink.activ span,.navbar .navitem:hover > .navlink span
+{
+    opacity: 1;
+    visibility: visible;
+    width: 7%;
+}

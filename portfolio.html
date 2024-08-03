@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <section class="home">
+        <nav class="navba">
+            <div class="containe">
+                <div class="row justify-content-between">
+                    <ul class="menu">
+                        <li class="navitem"><a href="index.html" class="navlink">Home<span></span></a></li>
+                        <li class="navitem"><a href="about.html" class="navlink">Services<span></span></a></li>
+                        
+                        <li class="navitem"><a href="index(2).html" class="navlink">Pricing<span></span></a></li>
+                        <li class="navitem"><a href="team2.html" class="navlink">Contact<span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <img class="video-slide active" src="" autoplay muted loop style="z-index: 000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;">
+        <img class="video-slide" src="" autoplay muted loop style="z-index: 000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;">
+        <img class="video-slide" src="" autoplay muted loop style="z-index: 000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;">
+        <img class="video-slide" src="" autoplay muted loop style="z-index: 000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;">
+        <img class="video-slide" src="" autoplay muted loop style="z-index: 000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;">
+    
+        <div class="content active">
+        <div class="container">
+        <div class="header">
+            <div class="placeholder">WELCOME</div>
+            <p id="subheader" style="font-size: 17px;font-weight: 600;">WHAT DO YOU THINK ?</p>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+    <div class="header">
+        <div class="placeholder">GAMING</div>
+        <p id="subheader" style="font-size: 17px;font-weight: 600;">WHAT DO YOU THINK ?</p>
+    </div>
+</div>
+</div>
+<div class="content">
+    <div class="container">
+    <div class="header">
+        <div class="placeholder">STYLE</div>
+        <p id="subheader" style="font-size: 17px;font-weight: 600;">WHAT DO YOU THINK ?</p>
+    </div>
+</div>
+</div>
+<div class="content">
+    <div class="container">
+
+    <div class="header">
+        <div class="placeholder">CREATIVITY</div>
+        <p id="subheader" style="font-size: 17px;font-weight: 600;">WHAT DO YOU THINK ?</p>
+    </div>
+</div>
+</div>
+<div class="content">
+    <div class="container">
+
+    <div class="header">
+        <div class="placeholder">COMPETITON</div>
+        <p id="subheader" style="font-size: 17px;font-weight: 600;">Games Just For You</p>
+    </div>
+</div>
+</div>
+    <div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </div>
+</section>
+    
+
+<script>
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+
+        btns.forEach((btn) => {
+            btn.classList.remove("active")
+        })
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active")
+        })
+
+        contents.forEach((content) => {
+            content.classList.remove("active")
+        })
+
+        btns[manual].classList.add("active")
+        slides[manual].classList.add("active")
+        contents[manual].classList.add("active")
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i)
+        });
+    });
+    
+</script>
+</body>
+</html>

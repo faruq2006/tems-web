@@ -1,0 +1,191 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html
+{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+body
+{
+    width: 100%;
+    height: 100%;
+    font-family: garamond;
+    text-transform: uppercase;
+    background: #000;
+}
+.header
+{
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+p
+{
+    text-align: center;
+    font-size: 12px;
+}
+.placeholder
+{
+    text-align: center;
+    font-family: garamond;
+    font-size: 80px;
+    line-height: 1.50;
+}
+.slider-navigation
+{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+.slider-navigation .nav-btn
+{
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255,255,255,0.5);
+    transition: 0.1s ease;
+}
+.slider-navigation .nav-btn:not(:last-child)
+{
+    margin-right: 20px;
+}
+.slider-navigation .nav-btn:hover
+{
+    transform: scale(1.5);
+}
+.slider-navigation .nav-btn.active
+{
+    background: #2696e9;
+}
+.video-slide
+{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.video-slide.active
+{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+.home .content
+{
+    display: none;
+}
+.home .content.active
+{
+    display: block;
+}
+ul
+{
+    list-style: none;
+}
+.containe
+{
+    max-width: 1140px;
+    margin: auto;
+}
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-content-between
+{
+    justify-content: space-between;
+}
+.navba
+{
+    position: fixed;
+    z-index: 999;
+    width: 50%;
+    top: 80%;
+    background-color: black;
+    border-radius: 25px;
+    padding: 15px;
+}
+.navba .logo a
+{
+    font-size: 28px;
+    font-family: "Bauhaus 93";
+    color: black;
+    font-weight: 50;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.navba .logo a span
+{
+    color: #fff;
+    font-family: "Bauhaus 93";
+}
+.navba .menu .navitem
+{
+    display: inline-block;
+    position: relative;
+    margin-left: 36px;
+}
+.navba .menu .navitem .navlink
+{
+    color: #fff;
+    font-size: 16px;
+    font-family: "Cooper Black";
+    font-weight: 600;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px 0;
+}
+.navba .navitem .navlink span
+{
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    border-radius: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out 0s;
+}
+.navba .navitem .navlink span::before
+{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: rgb(119, 70, 25);
+    left: 110%;
+}
+.navba .navitem .navlink span::after
+{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    left: 140%;
+}
+.navba .navitem > .navlink.activ span,.navba .navitem:hover > .navlink span
+{
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: black;">
+    <nav class="navbar">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="logo"><a href="index.html" >PANDA<span>GAMES</span></a></div>
+                <ul class="menu">
+                    
+                    <li class="navitem"><a href="about.html" class="navlink">Services<span></span></a></li>
+                    <li class="navitem"><a href="portfolio.html" class="navlink">Portfolio<span></span></a></li>
+                    <li class="navitem"><a href="index(2).html" class="navlink">Pricing<span></span></a></li>
+                    <li class="navitem"><a href="team2.html" class="navlink">Contact<span></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="home-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="hometext">
+                    <h1>Joel Onyeokoro</h1>
+                    <span>Professional Freelancer Web Developer</span>
+                    <p>Lorem ipsum dolor sita amet consectetur adipisicing elit. Natus
+                         Minima aliquid omnis facere, nihil magni eaque necessitatibus!</p>
+                         <a href="#" class="bt bt1">purchase now</a>
+                </div>
+                <img src="" alt="food" class="image">
+                <div class="homeimage">
+                    <div class="imgbox">
+                        <img src="" class="imagex" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerheroshape"></div>
+    </section>
+    <section class="home-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="hometext">
+                    <div class="gallery">
+                        <div class="gallery-container">
+                            <img src="" class="gallery-item gallery-item-2" data-index="2">
+                            <img src="" class="gallery-item gallery-item-3" data-index="3">
+                            <img src="" class="gallery-item gallery-item-4" data-index="4">
+                        </div>
+                        <div class="gallery-controls"></div>
+                    </div>
+                </div>
+                <div class="homeimage">
+                    <div class="imgbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerheroshape2"></div>
+    </section>
+    <section class="home-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="hometext">
+                    <div class="imgslider">
+                        <div class="slide active">
+                            <video src="" autoplay muted loop></video>
+                            <div class="info">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="" alt="">
+                            <div class="info">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <video src="" autoplay muted loop></video>
+                            <div class="info">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="" alt="">
+                            <div class="info">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <video src="" autoplay muted loop></video>
+                            <div class="info">
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="btn active"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="homeimage">
+                    <div class="imgbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerheroshape"></div>
+    </section>
+    <section class="home-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="hometext" style="height: 550px;">
+                    <div class="contai">
+                        <div class="box one" style="--img:url();"
+                        data-text="COOKING"></div>
+                        <div class="box two" style="--img:url();"
+                        data-text="BUSINESS"></div>
+                        <div class="box three" style="--img:url();"
+                        data-text="SCHOOL"></div>
+                        <div class="box four" style="--img:url();"
+                        data-text="MUSIC"></div>
+                        <div class="box five" style="--img:url();"
+                        data-text="RELIGIOUS"></div>
+                    </div>
+                </div>
+                <div class="homeimage">
+                    <div class="imgbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerheroshape2"></div>
+    </section>
+
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('.slide');
+        var btns = document.querySelectorAll('.btn');
+        let currentSlide = 1;
+
+        var manualNav = function(manual){
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+
+                btns.forEach((btn) => {
+                btn.classList.remove('active');
+                });
+            });
+
+            slides[manual].classList.add('active');
+            btns[manual].classList.add('active');
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                manualNav(i);
+                currentSlide = i;
+            });
+        });
+
+        var repeat = function(activeClass){
+            let active = document.getElementsByClassName('active');
+            let i = 1;
+
+            var repeater = () => {
+                setTimeout(function(){
+                    [...active].forEach((activeSlide) => {
+                        activeSlide.classList.remove('active');
+                    });
+
+                    slides[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+
+                    if(slides.length == i){
+                        i = 0;
+                    }
+                    if(i >= slides.length){
+                        return;
+                    }
+                    repeater();;
+                }, 10000);
+            }
+            repeater();
+        }
+        repeat();
+    </script>
+</body>

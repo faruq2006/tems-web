@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style (2).css">
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="1000_F_200096607_ddMpEWJW7MI9JL3JKLX0NZefAPat8a7b.jpg" id="slideimg">
+        </div>
+        <div class="overlay">    <header>
+            <nav>
+                <div id="indicator">
+                </div>
+    
+            </nav>
+        </header>
+        <div class="content">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <ul class="menu">
+                            <li class="navitem"><a href="index.html" class="navlink">Home<span></span></a></li>
+                            <li class="navitem"><a href="about.html" class="navlink">Services<span></span></a></li>
+                            <li class="navitem"><a href="portfolio.html" class="navlink">Portfolio<span></span></a></li>
+                            
+                            <li class="navitem"><a href="team2.html" class="navlink">Contact<span></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <header>
+                <h1 style="font-family: Cooper Black;">Our Pricing</h1>
+                <div class="toggle">
+                    <label style="font-family: Cooper Black;">Annually</label>
+                    <div class="togglebtn">
+                        <input type="checkbox" id="checkbox" class="checkbox">
+                        <label for="checkbox" class="sub" id="suv">
+                            <div class="circle"></div>
+                        </label>
+                    </div>
+                    <label style="font-family: Cooper Black;">Monthly</label>
+                </div>
+            </header>
+
+
+            <div class="cards">
+                <div class="cardshadow" style="background: linear-gradient(
+                    135deg,
+                    rgba(163, 168, 240, 1) 0%,
+                    hsl(233, 13%, 49%) 100%); border-radius: 0.8rem;font-family: Cooper Black;color: #fff;">
+                    <ul>
+                        <li class="pack">Basic</li>
+                        <li id="basic" class="pricebottombar" style="    color: hsl(233, 12%, 29%);font-family: 'Times New Roman', Times, serif;">&dollar;199.99</li>
+                        <li class="bottombar"></li>
+                        <li class="bottombar">50 GB Storage</li>
+                        <li class="bottombar">2 Users Allowed</li>
+                        <li class="bottombar">Send up to 3 GB</li>
+                        <li>
+                            <button class="btn" style="font-family: Cooper Black;">Learn More</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card active" style="font-family: Cooper Black;">
+                    <ul>
+                        <li class="pack">Professional</li>
+                        <li id="basic" class="pricebottombar" style="font-family: 'Times New Roman', Times, serif;">&dollar;299.99</li>
+                        <li class="bottombar"></li>
+                        <li class="bottombar">1 TB Storage</li>
+                        <li class="bottombar">5 Users Allowed</li>
+                        <li class="bottombar">Send up to 10 GB</li>
+                        <li>
+                            <button class="btn" style="background: #fff; color: hsl(232, 13%, 33%);font-family: Cooper Black;">Learn More</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cardshadow" style="    background: linear-gradient(
+                    135deg,
+                    rgba(163, 168, 240, 1) 0%,
+                    hsl(233, 13%, 49%) 100%); border-radius: 0.8rem;font-family: Cooper Black;color: #fff;">
+                    <ul>
+                        <li class="pack">Master</li>
+                        <li id="basic" class="pricebottombar" style="    color: hsl(233, 14%, 35%);font-family: 'Times New Roman', Times, serif;">&dollar;399.99</li>
+                        <li class="bottombar"></li>
+                        <li class="bottombar">2 TB Storage</li>
+                        <li class="bottombar">10 Users Allowed</li>
+                        <li class="bottombar">Send up to 20 GB</li>
+                        <li>
+                            <button class="btn" style="font-family: Cooper Black;">Learn More</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+        var slideimg = document.getElementById("slideimg");
+
+        var images = new Array(
+            "WhatsApp Image 2024-07-30 at 14.40.33_f2e4a0a6.jpg",
+            "WhatsApp Image 2024-07-30 at 14.40.34_4901e15d.jpg",
+            "",
+            "",
+            "",
+            ""
+        );
+
+        var len = images.length;
+        var i = 0;
+
+        function slider(){
+            if(i > len-1){
+                i = 0
+            }
+            slideimg.src = images[i];
+            i++;
+            setTimeout('slider()',3000)
+        }
+
+        
+    </script>
+
+</body>
+</html>
